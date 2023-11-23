@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  movies:
+    container_name: movies
+    build:
+      context: ./movies
+      dockerfile: Dockerfile
+    depends_on:
+     - random
+    ports:
+     - "3001:3001"
+    restart: "no"
+    
+  random:
+    container_name: random
+    build:
+      context: ./random
+      dockerfile: Dockerfile
+    depends_on:
+     - my_movies
+     - info
+    ports:
+     - "3002:3002"
+    restart: "no"
+    
+  info:
+    container_name: info
+    build:
+      context: ./info
+      dockerfile: Dockerfile
+    ports:
+     - "3003:3003"
+    restart: "no"
+    
+  my_movies:
+    container_name: my_movies
+    build:
+      context: ./my_movies
+      dockerfile: Dockerfile
+    ports:
+     - "3004:3004"
+    restart: "no"
