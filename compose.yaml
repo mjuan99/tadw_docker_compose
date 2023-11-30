@@ -39,5 +39,5 @@ services:
       context: ./my_movies
       dockerfile: Dockerfile
     ports:
-     - "3004:3004"
+     - "3004:80"
     restart: "no"
