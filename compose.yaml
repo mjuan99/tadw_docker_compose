@@ -39,5 +39,16 @@ services:
       context: ./my_movies
       dockerfile: Dockerfile
     ports:
-     - "3004:80"
+     - "3004:3004"
     restart: "no"
+    depends_on:
+     - mongo_db
+    
+  mongo_db:
+    container_name: mongo_db
+    build:
+      context: ./mongo_db
+      dockerfile: Dockerfile
+    ports:
+     - "27017:27017"
+    restart: no
