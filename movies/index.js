@@ -19,7 +19,6 @@ app.get('/', async (req, res) => {
         random_movies = random_response.data;
     } catch (error) {
         console.log(error);
-        random_status = "Error";
     }
 
     res.render('index', {

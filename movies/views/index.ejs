@@ -54,6 +54,8 @@
                     <img src="https://image.tmdb.org/t/p/w200<%= movie.movie.poster_path %>" alt="Movie Poster">
                 </li>
             <% }); %>
+        <% } else { %>
+            <p>Error al recuperar peliculas.</p>
         <% } %>
     </ul>
 </body>
